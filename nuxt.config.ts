@@ -100,6 +100,7 @@ export default defineNuxtConfig({
   },
 
   nitro: {
+    preset: 'cloudflare',
     prerender: {
       crawlLinks: false,
       routes: ['/sitemap.xml', '/', '/writing', '/works', '/about', '/contact'],
@@ -130,4 +131,8 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-07-31',
+  hub: {
+    kv: true,
+    blob: true
+  }
 })
