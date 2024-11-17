@@ -1,8 +1,8 @@
 ---
-name: Helpr
-release: 2023
+name: DC Project
+release: 2024
 image: /projects/helpr.webp
-link: https://helpr.tech/
+link: '#'
 featured: true
 layout: project
 ---
