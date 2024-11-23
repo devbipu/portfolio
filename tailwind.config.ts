@@ -73,7 +73,7 @@ module.exports = {
     plugin(({ matchUtilities, theme }) => {
       matchUtilities(
         {
-          'text-shadow': value => ({
+          'text-shadow': (value) => ({
             textShadow: value,
           }),
         },
@@ -81,7 +81,7 @@ module.exports = {
       )
       matchUtilities(
         {
-          'bg-grid': value => ({
+          'bg-grid': (value) => ({
             backgroundImage: `url("${svgToDataUri(
               `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke="${value}" fill="none"><path d="M64 0H0V64"/></svg>`,
             )}")`,
@@ -94,7 +94,7 @@ module.exports = {
       )
       matchUtilities(
         {
-          'bg-grid': value => ({
+          'bg-grid': (value) => ({
             backgroundSize: value,
           }),
         },

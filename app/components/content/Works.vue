@@ -1,9 +1,14 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale } = useI18n();
 
-const { data: projects } = await useAsyncData('projects', () => queryContent('/projects').locale(locale.value).sort({ release: -1 }).find(), {
-  watch: [locale],
-})
+const { data: projects } = await useAsyncData(
+  "projects",
+  () =>
+    queryContent("/projects").locale(locale.value).sort({ release: -1 }).find(),
+  {
+    watch: [locale],
+  },
+);
 </script>
 
 <template>
@@ -16,11 +21,7 @@ const { data: projects } = await useAsyncData('projects', () => queryContent('/p
     </h2>
     <Divider class="mb-8 mt-2" />
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      <ProjectCard
-        v-for="project in projects"
-        :key="project.name"
-        :project
-      />
+      <ProjectCard v-for="project in projects" :key="project.name" :project />
     </div>
   </section>
 </template>

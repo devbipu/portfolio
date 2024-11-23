@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import projects from '~/data/projects'
+import projects from "~/data/projects";
 </script>
 
 <template>
@@ -17,14 +17,15 @@ import projects from '~/data/projects'
       </span>
       <div class="mx-2 h-[0.1px] w-full bg-muted" />
       <span class="whitespace-nowrap text-muted">
-        {{ project.release === "soon" ? $t("global.soon") + "..." : project.release }}
+        {{
+          project.release === "soon"
+            ? $t("global.soon") + "..."
+            : project.release
+        }}
       </span>
     </NuxtLink>
     <div class="mt-4 flex justify-center">
-      <button
-        class="btn-primary"
-        @click="useRouter().push('/works')"
-      >
+      <button class="btn-primary" @click="useRouter().push('/works')">
         {{ $t("global.see_more") }}
       </button>
     </div>

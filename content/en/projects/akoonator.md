@@ -1,7 +1,7 @@
 ---
 name: Akoonator
 release: 2024
-image: /projects/maison-hochard.webp
+image: /projects/akoonator.png
 link: https://akoonator.com/
 featured: true
 layout: project

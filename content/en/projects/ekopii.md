@@ -1,7 +1,7 @@
 ---
 name: Ekopii
 release: Coming soon...
-image: /projects/mockline.webp
+image: /projects/ekopii.png
 link: https://ekopii.com/
 featured: true
 layout: project

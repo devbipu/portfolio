@@ -7,7 +7,7 @@
       "questions": [
         {
           "title": "What services do you offer?",
-          "answer": "I offer a range of services including web design, web development, branding, and photography. I can also help with SEO and social media marketing."
+          "answer": "I offer a range of services including web design, web development, webapp development and existing website/webapp fixing & customization"
         },
         {
           "title": "Can you teach me how to make a website?",
@@ -20,11 +20,11 @@
       "questions": [
         {
           "title": "How much does a project cost?",
-          "answer": "The cost of a project depends on many factors, such as the size of the project, the features, the development time, etc. The initial amount of my web services starts at 2000€, with an average between 3000€ and 10000€. For any other design or consulting service, I usually charge 450€ per day."
+          "answer": "The cost of a project depends on many factors, such as the size of the project, the features, the development time, etc. The initial amount of my web services starts at $200, with an average between $500 and 1000€. For any other design or consulting service, I usually charge $14 per hour."
         },
         {
           "title": "How does payment work for a project?",
-          "answer": "I ask for a 40% deposit before starting a project, and the remaining 60% after successful delivery. I accept payments by bank transfer, PayPal, etc..."
+          "answer": "I ask for a 40% deposit before starting a project, and the remaining 60% after successful delivery. I accept payments by bank transfer"
         },
         {
           "title": "How long does a project take?",
@@ -41,11 +41,11 @@
       "questions": [
         {
           "title": "What do you enjoy most about this work?",
-          "answer": "I love learning new things and being able to create just about anything from scratch, creating beautiful things that people will use and appreciate."
+          "answer": "I love coding and learning new things and being able to create just about anything from scratch, creating beautiful things that grow peoples business."
         },
         {
           "title": "Hobbies outside of work?",
-          "answer": "I love what I do, so I usually spend a lot of time working on personal projects, photography, etc. I'm also a big sports fan. I often go to the gym and I recently started climbing!"
+          "answer": "I love what I do, so I usually spend a lot of time working on personal projects. I'm also a big sports fan and playing video game!"
         }
       ]
     }

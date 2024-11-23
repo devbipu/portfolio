@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import experiences from '~/data/about'
+import experiences from "~/data/about";
 </script>
 
 <template>

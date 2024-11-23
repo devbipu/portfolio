@@ -3,9 +3,13 @@ import type { Faq } from '~/types/Faq'
 
 const { locale } = useI18n()
 
-const { data: faq } = await useAsyncData('faq', () => queryContent('/faq').locale(locale.value).findOne(), {
-  watch: [locale],
-})
+const { data: faq } = await useAsyncData(
+  'faq',
+  () => queryContent('/faq').locale(locale.value).findOne(),
+  {
+    watch: [locale],
+  },
+)
 
 const items = computed(() => {
   return faq.value?.faqQuestions.map((faq: Faq) => {
@@ -23,7 +27,8 @@ const ui = {
     background: 'bg-transparent dark:bg-transparent',
     rounded: 'rounded-full',
     marker: {
-      wrapper: 'absolute top-[4px] left-[4px] duration-200 ease-out focus:outline-none',
+      wrapper:
+        'absolute top-[4px] left-[4px] duration-200 ease-out focus:outline-none',
       base: 'w-full h-full',
       background: 'bg-transparent',
       rounded: 'rounded-full',
@@ -56,16 +61,9 @@ const ui = {
       </p>
     </div>
     <div>
-      <UTabs
-        :items
-        orientation="horizontal"
-        :ui
-      >
+      <UTabs :items orientation="horizontal" :ui>
         <template #item="{ item }">
-          <FAQ
-            :questions="item.questions"
-            class="mt-8 max-w-lg"
-          />
+          <FAQ :questions="item.questions" class="mt-8 max-w-lg" />
         </template>
       </UTabs>
     </div>

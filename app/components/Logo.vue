@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// import { NuxtImg } from '#build/components'
 const { appName } = useAppConfig()
 
 defineProps({
@@ -8,7 +9,7 @@ defineProps({
   },
   size: {
     type: Number,
-    default: 6,
+    default: 16,
   },
 })
 </script>
@@ -19,15 +20,13 @@ defineProps({
     class="flex shrink-0 items-center"
     aria-label="Go back to home page"
   >
-    <SvgoMaisonHochard
+    <NuxtImg
       class="block w-auto"
+      src="/devbipu-logo-footr.png"
       :class="size ? 'h-' + size : 'h-6'"
-      :font-controlled="false"
     />
-    <span
-      v-if="isText"
-      class="ml-1 text-xs font-semibold"
-    >
+
+    <span v-if="isText" class="ml-1 text-xs font-semibold">
       {{ appName }}
     </span>
   </NuxtLink>

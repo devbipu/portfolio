@@ -35,14 +35,18 @@ async function submitForm() {
     fullname.value = ''
     subject.value = ''
     toast.success(t('contact.success'))
-  }
-  catch (error) {
+  } catch (error) {
     toast.error(t('contact.error'))
   }
   loading.value = false
 }
 
-defineOgImage({ url: appConfig.openGraphImage, width: 1200, height: 630, alt: 'Home image' })
+defineOgImage({
+  url: appConfig.openGraphImage,
+  width: 1200,
+  height: 630,
+  alt: 'Home image',
+})
 </script>
 
 <template>
@@ -60,10 +64,7 @@ defineOgImage({ url: appConfig.openGraphImage, width: 1200, height: 630, alt: 'H
         @submit.prevent="submitForm"
       >
         <!-- Fullname -->
-        <UFormGroup
-          label="Fullname"
-          required
-        >
+        <UFormGroup label="Fullname" required>
           <UInput
             id="full-name"
             v-model="fullname"
@@ -77,10 +78,7 @@ defineOgImage({ url: appConfig.openGraphImage, width: 1200, height: 630, alt: 'H
         </UFormGroup>
 
         <!-- Email -->
-        <UFormGroup
-          label="Email"
-          required
-        >
+        <UFormGroup label="Email" required>
           <UInput
             id="email"
             v-model="email"
@@ -94,9 +92,7 @@ defineOgImage({ url: appConfig.openGraphImage, width: 1200, height: 630, alt: 'H
         </UFormGroup>
 
         <!-- Phone -->
-        <UFormGroup
-          label="Phone"
-        >
+        <UFormGroup label="Phone">
           <UInput
             id="phone"
             v-model="phone"
@@ -109,10 +105,7 @@ defineOgImage({ url: appConfig.openGraphImage, width: 1200, height: 630, alt: 'H
         </UFormGroup>
 
         <!-- Subject -->
-        <UFormGroup
-          label="Subject"
-          required
-        >
+        <UFormGroup label="Subject" required>
           <UInput
             id="subject"
             v-model="subject"
@@ -124,10 +117,7 @@ defineOgImage({ url: appConfig.openGraphImage, width: 1200, height: 630, alt: 'H
         </UFormGroup>
 
         <!-- Message -->
-        <UFormGroup
-          label="Message"
-          required
-        >
+        <UFormGroup label="Message" required>
           <UTextarea
             id="message"
             v-model="message"
@@ -147,33 +137,28 @@ defineOgImage({ url: appConfig.openGraphImage, width: 1200, height: 630, alt: 'H
             loading-icon="i-lucide-loader"
             block
           >
-            {{ $t("contact.submit") }}
+            {{ $t('contact.submit') }}
           </UButton>
         </div>
       </form>
       <Divider class="my-10" />
-      <div class="flex w-full flex-col items-center justify-between gap-4 sm:flex-row">
+      <div
+        class="flex w-full flex-col items-center justify-between gap-4 sm:flex-row"
+      >
         <div class="flex flex-col gap-3">
-          <dd class="flex items-center gap-3 text-gray-400">
-            <UIcon
-              name="heroicons-phone"
-              class="size-6"
-              aria-hidden="true"
-            />
+          <div class="flex items-center gap-3 text-gray-400">
+            <UIcon name="heroicons-phone" class="size-6" aria-hidden="true" />
             <span>
               {{ appConfig.phone }}
             </span>
-          </dd>
-          <dd class="flex items-center gap-3 text-gray-400">
+          </div>
+          <div class="flex items-center gap-3 text-gray-400">
             <UIcon
               name="heroicons-envelope"
               class="size-6"
               aria-hidden="true"
             />
-            <UTooltip
-              :text="$t('global.email')"
-              :shortcuts="['⌘', 'O']"
-            >
+            <UTooltip :text="$t('global.email')" :shortcuts="['⌘', 'O']">
               <NuxtLink
                 :to="`mailto:${appConfig.email}`"
                 class="cursor-pointer transition-colors duration-300 hover:text-main"
@@ -181,10 +166,10 @@ defineOgImage({ url: appConfig.openGraphImage, width: 1200, height: 630, alt: 'H
                 {{ appConfig.email }}
               </NuxtLink>
             </UTooltip>
-          </dd>
+          </div>
         </div>
         <div>
-          <MeetingButton />
+          <HomeSocial style="--stagger: 3" data-animate />
         </div>
       </div>
     </div>

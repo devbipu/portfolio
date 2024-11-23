@@ -1,9 +1,14 @@
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale } = useI18n();
 
-const { data: projects } = await useAsyncData('projects', () => queryContent('/projects').locale(locale.value).sort({ release: -1 }).find(), {
-  watch: [locale],
-})
+const { data: projects } = await useAsyncData(
+  "projects",
+  () =>
+    queryContent("/projects").locale(locale.value).sort({ release: -1 }).find(),
+  {
+    watch: [locale],
+  },
+);
 </script>
 
 <template>
@@ -26,12 +31,18 @@ const { data: projects } = await useAsyncData('projects', () => queryContent('/p
         </span>
         <div class="mx-2 h-[0.1px] w-full bg-muted" />
         <span class="whitespace-nowrap text-muted">
-          {{ project.release === "soon" ? $t("global.soon") + "..." : project.release }}
+          {{
+            project.release === "soon"
+              ? $t("global.soon") + "..."
+              : project.release
+          }}
         </span>
       </NuxtLink>
     </div>
     <div @click="useRouter().push('/works')">
-      <span class="font-newsreader italic text-white-shadow cursor-pointer text-sm">
+      <span
+        class="font-newsreader italic text-white-shadow cursor-pointer text-sm"
+      >
         {{ $t("global.see_more") }}
       </span>
     </div>

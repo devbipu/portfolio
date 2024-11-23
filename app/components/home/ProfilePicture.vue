@@ -9,9 +9,9 @@ const { profilePicture } = useAppConfig()
         class="font-mona relative flex items-center justify-center gap-2 bg-gradient-to-b from-white/25 to-white bg-clip-text text-lg font-medium text-transparent transition-all duration-200"
       >
         <NuxtImg
-          width="96"
+          width="180"
           :src="profilePicture"
-          class="size-24 rounded-full border-2 border-gray-800/30 object-cover"
+          class="size-36 rounded-full border-2 border-gray-800/30 object-cover"
           alt="Hugo Richard Profile Picture"
           aria-label="Hugo Richard Profile Picture"
         />

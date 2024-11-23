@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
+import type { PropType } from "vue";
 
 defineProps({
   experiences: {
-    type: Object as PropType<{ title: string, date: string, company: string }[]>,
+    type: Object as PropType<
+      { title: string; date: string; company: string }[]
+    >,
     required: true,
   },
-})
+});
 </script>
 
 <template>
@@ -15,10 +17,7 @@ defineProps({
       {{ $t("global.experiences") }}
     </h3>
     <div class="flex flex-col gap-4 text-main">
-      <div
-        v-for="experience in experiences"
-        :key="experience.title"
-      >
+      <div v-for="experience in experiences" :key="experience.title">
         <h4 class="font-semibold text-main">
           {{ experience.title }}
         </h4>

@@ -12,11 +12,11 @@ const props = defineProps({
     type: Number,
     default: -1,
   },
-})
+});
 
-const id = Math.round(Math.random() * 999)
+const id = Math.round(Math.random() * 999);
 
-provide('grid-context', props)
+provide("grid-context", props);
 </script>
 
 <template>
@@ -31,10 +31,7 @@ provide('grid-context', props)
         :x="offsetX"
         :y="offsetY"
       >
-        <path
-          d="M64 0H0V64"
-          fill="none"
-        />
+        <path d="M64 0H0V64" fill="none" />
       </pattern>
     </defs>
 

@@ -1,5 +1,7 @@
 <script setup lang="ts">
-const { data: stack } = await useAsyncData('stack', () => queryContent('/stack').findOne())
+const { data: stack } = await useAsyncData('stack', () =>
+  queryContent('/stack').findOne(),
+)
 </script>
 
 <template>
@@ -11,17 +13,21 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
       <ContentSlot :use="$slots.subtitle" />
     </h2>
     <Divider class="mb-8 mt-2" />
-    <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div
+      class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+    >
       <AboutProfilePicture />
       <div class="relative flex flex-col gap-3 sm:ml-4">
-        <h3 class="text-lg text-muted">
-          Intro
-        </h3>
+        <h3 class="text-lg text-muted">Intro</h3>
         <div class="flex flex-col gap-4 text-main">
           <ContentSlot :use="$slots.intro" />
         </div>
-        <AboutSignature class="absolute -bottom-24 right-0 hidden w-40 sm:block" />
-        <AboutSignature class="black absolute -bottom-24 -right-2 w-32 sm:hidden" />
+        <!-- <AboutSignature
+          class="absolute -bottom-24 right-0 hidden w-40 sm:block"
+        />
+        <AboutSignature
+          class="black absolute -bottom-24 -right-2 w-32 sm:hidden"
+        /> -->
       </div>
     </div>
     <Divider class="my-8" />
@@ -37,11 +43,7 @@ const { data: stack } = await useAsyncData('stack', () => queryContent('/stack')
         </p>
       </div>
       <div class="flex flex-wrap gap-4">
-        <AboutStackItem
-          v-for="item in stack!.items"
-          :key="item.name"
-          :item
-        />
+        <AboutStackItem v-for="item in stack!.items" :key="item.name" :item />
       </div>
     </div>
   </section>

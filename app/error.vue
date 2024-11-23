@@ -4,20 +4,22 @@ defineProps({
     type: Object,
     required: true,
   },
-})
+});
 
 function handleError() {
-  clearError({ redirect: '/' })
+  clearError({ redirect: "/" });
 }
 
 function goBack() {
-  clearError()
-  useRouter().back()
+  clearError();
+  useRouter().back();
 }
 </script>
 
 <template>
-  <main class="grid min-h-full place-items-center bg-black px-6 py-24 sm:py-32 lg:px-8">
+  <main
+    class="grid min-h-full place-items-center bg-black px-6 py-24 sm:py-32 lg:px-8"
+  >
     <div class="text-center">
       <p class="text-accent text-base font-semibold">
         {{ error.statusCode }}

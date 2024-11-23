@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import { usePreferredLanguages } from '@vueuse/core'
+import { usePreferredLanguages } from "@vueuse/core";
 
-const { locale } = useI18n()
+const { locale } = useI18n();
 
 // languages is a ref of an array of strings like ['en-US', 'en', 'fr']
-const languages = usePreferredLanguages()
+const languages = usePreferredLanguages();
 
 const isLanguageDifferent = computed(() => {
-  const currentLocaleBrowser = languages.value[0].split('-')[0]
+  const currentLocaleBrowser = languages.value[0].split("-")[0];
   // if the first language in the array is different from the current locale or first language not contained the current locale
-  return currentLocaleBrowser !== locale.value || !languages.value.includes(locale.value)
-})
+  return (
+    currentLocaleBrowser !== locale.value ||
+    !languages.value.includes(locale.value)
+  );
+});
 </script>
 
 <template>

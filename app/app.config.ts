@@ -1,12 +1,12 @@
 export default defineAppConfig({
-  appName: 'Nuxt portfolio template',
-  appDescription: 'This is a simple but beautiful portfolio template for designers and developers built with Nuxt and Tailwind CSS',
+  appName: 'Top Rated Full Stack PHP JavaScript Developer - Biplob Shaha',
+  appDescription: `Full-Stack Laravel & Vue.js Developer with 3+ years of experience specializing in PHP, Laravel, CodeIgniter, and JavaScript frameworks like Vue.js and Nuxt.js. Passionate about creating efficient, user-friendly applications.`,
   profilePicture: '/assets/devbipu-photo.png',
   footerName: 'devbipu',
   email: 'devbipu@gmail.com',
   twitterUsername: 'developerbipu',
   phone: '(+880) 1787439657',
-  openGraphImage: '/social-preview-img.png',
+  openGraphImage: '/social-preview.jpg',
   socials: {
     github: 'https://github.com/devbipu',
     twitter: 'https://twitter.com/developerbipu',

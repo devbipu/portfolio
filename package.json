@@ -1,6 +1,6 @@
 {
-  "name": "canvas-template",
-  "author": "HugoRCD",
+  "name": "devbipu-portfolio",
+  "author": "devbipu",
   "version": "1.1.0",
   "private": true,
   "license": "Apache-2.0",
@@ -32,6 +32,7 @@
     "nuxt": "^3.14.159",
     "nuxt-og-image": "^3.0.8",
     "nuxt-svgo": "^4.0.8",
+    "prettier": "3.3.3",
     "resend": "^4.0.0",
     "sitemap": "^8.0.0",
     "vue-sonner": "^1.2.5"

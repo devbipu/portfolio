@@ -2,66 +2,67 @@
 const props = defineProps({
   as: {
     type: String,
-    default: 'div',
+    default: "div",
   },
   active: {
     type: Boolean,
     default: false,
   },
-})
+});
 
-const container = ref()
+const container = ref();
 
-const context = inject('nav-context')
+const context = inject("nav-context");
 
 // current element index
-const peers = inject('peers')
+const peers = inject("peers");
 const index = computed(() => {
-  return peers?.value ? peers.value.indexOf(container.value) : -1
-})
+  return peers?.value ? peers.value.indexOf(container.value) : -1;
+});
 
 // active item indicator
 const isActive = computed(() => {
-  return context.activeItem.index === index.value
-})
+  return context.activeItem.index === index.value;
+});
 
 watch(index, () => {
   // set default element as active
   if (props.active) {
-    setActive()
+    setActive();
   }
 
   if (index.value === peers.value.length - 1) {
-    context.setMounted()
+    context.setMounted();
   }
-})
+});
 
 watch(context.isMounted, () => {
   // set first element as active
   if (context.activeItem.index === -1 && index.value === 0) {
-    setActive()
+    setActive();
   }
-})
+});
 
 //
 function setActive() {
   if (context.isVertical) {
-    context.setActiveItem(index.value, container.value.getBoundingClientRect().height, container.value.offsetTop)
-  }
-  else {
-    context.setActiveItem(index.value, container.value.getBoundingClientRect().width, container.value.offsetLeft)
+    context.setActiveItem(
+      index.value,
+      container.value.getBoundingClientRect().height,
+      container.value.offsetTop,
+    );
+  } else {
+    context.setActiveItem(
+      index.value,
+      container.value.getBoundingClientRect().width,
+      container.value.offsetLeft,
+    );
   }
 }
 </script>
 
 <template>
-  <component
-    :is="as"
-    ref="container"
-  >
-    <slot
-      :set-active
-      :is-active
-    />
+  <component :is="as" ref="container">
+    <slot :set-active :is-active />
   </component>
 </template>

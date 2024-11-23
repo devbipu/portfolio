@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { useMouseInElement } from '@vueuse/core'
+import { useMouseInElement } from "@vueuse/core";
 
 const props = defineProps({
   as: {
     type: String,
-    default: 'div',
+    default: "div",
   },
   from: {
     type: String,
-    default: 'rgba(255,255,255,0.8)',
+    default: "rgba(255,255,255,0.8)",
   },
   via: {
     type: String,
@@ -17,7 +17,7 @@ const props = defineProps({
   },
   to: {
     type: String,
-    default: 'transparent',
+    default: "transparent",
   },
   size: {
     type: Number,
@@ -25,7 +25,7 @@ const props = defineProps({
   },
   mode: {
     type: String,
-    default: 'before',
+    default: "before",
   },
   white: {
     type: Boolean,
@@ -33,14 +33,16 @@ const props = defineProps({
   },
   radius: {
     type: String,
-    default: '2xl',
+    default: "2xl",
   },
-})
+});
 
-const card = ref()
-const { elementX, elementY } = useMouseInElement(card)
+const card = ref();
+const { elementX, elementY } = useMouseInElement(card);
 
-const spotlightColorStops = [props.from, props.via, props.to].filter(value => !!value).join(',')
+const spotlightColorStops = [props.from, props.via, props.to]
+  .filter((value) => !!value)
+  .join(",");
 </script>
 
 <template>
@@ -70,16 +72,24 @@ const spotlightColorStops = [props.from, props.via, props.to].filter(value => !!
     class="relative rounded-[--radius] [--radius:theme(borderRadius.xl)] lg:[--radius:theme(borderRadius.2xl)]"
   >
     <!-- border gradient -->
-    <div class="absolute inset-x-0 bottom-[--radius] top-0 rounded-t-[--radius] bg-gradient-to-b from-white/20 to-transparent" />
+    <div
+      class="absolute inset-x-0 bottom-[--radius] top-0 rounded-t-[--radius] bg-gradient-to-b from-white/20 to-transparent"
+    />
 
     <!-- top highlight -->
-    <div class="absolute inset-x-[--radius] top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent" />
+    <div
+      class="absolute inset-x-[--radius] top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"
+    />
 
     <!-- background -->
-    <div class="absolute inset-px rounded-[calc(var(--radius)-1px)] bg-zinc-950" />
+    <div
+      class="absolute inset-px rounded-[calc(var(--radius)-1px)] bg-zinc-950"
+    />
 
     <!-- inner light -->
-    <div class="absolute inset-0 bg-[radial-gradient(40%_128px_at_50%_0%,theme(backgroundColor.white/5%),transparent)]" />
+    <div
+      class="absolute inset-0 bg-[radial-gradient(40%_128px_at_50%_0%,theme(backgroundColor.white/5%),transparent)]"
+    />
 
     <div class="relative flex h-full flex-col">
       <slot />

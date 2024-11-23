@@ -1,28 +1,3 @@
-![Portfolio Social Preview](./public/social-preview.jpg)
-
-<p align="center">
-    <a aria-label="Hugo's Website" href="https://hrcd.fr">
-        <img alt="" src="https://img.shields.io/badge/Website-hrcd.fr-blue?style=for-the-badge&labelColor=000000&logo=google-chrome&logoColor=white">
-  <a aria-label="License" href="https://github.com/hugorcd/canvas/blob/main/LICENSE">
-    <img alt="" src="https://img.shields.io/npm/l/vue.svg?style=for-the-badge&labelColor=000000&color=blue">
-    </a>
-  <a aria-label="Follow Hugo on Twitter" href="https://twitter.com/HugoRCD__">
-    <img alt="" src="https://img.shields.io/twitter/follow/HugoRCD__.svg?style=for-the-badge&labelColor=000000&logo=twitter&label=Follow%20Hugo&logoWidth=20&logoColor=white">
-  </a>
-</p>
-
-# Canvas template
-
-This is a fully customizable portfolio template built with [Nuxt.js](https://nuxtjs.org/) and [Tailwind CSS](https://tailwindcss.com/). Use it to showcase your work, testimonials and other information to your clients.
-
-## Demo
-
-You can see a live demo at [canvas.hrcd.fr](https://canvas.hrcd.fr/).
-
-## Deploy with Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FHugoRCD%2Fcanvas&env=NUXT_PUBLIC_AVAILABLE,NUXT_PRIVATE_RESEND_API_KEY,NUXT_PUBLIC_STUDIO_TOKENS,NUXT_PUBLIC_MEETING_LINK,NUXT_PUBLIC_SITE_URL&envDescription=You%20will%20require%20an%20API%20key%20for%20Resend%20and%20Nuxt%20Studio%2C%20but%20it%20is%20not%20essential%20for%20the%20portfolio%20to%20work.%20Simply%20add%20%22test%2C%22%20for%20example%2C%20and%20edit%20the%20variable%20later.&project-name=canvas-portfolio&repository-name=canvas-portfolio&demo-title=Canvas&demo-url=canvas.hrcd.fr&demo-image=https%3A%2F%2Fcanvas.hrcd.fr%2Fsocial-preview.jpg)
-
 ## Features
 
 - Fully [Nuxt Content](https://content.nuxt.com/) driven with the content driven mode on
@@ -46,31 +21,37 @@ You can see a live demo at [canvas.hrcd.fr](https://canvas.hrcd.fr/).
 ## Quick Setup
 
 1. Clone this repository if you have access or download it from the store
+
 ```bash
-git clone git@github.com:HugoRCD/canvas.git
+git clone git@github.com:devbipu/portfolio.git
 ```
 
 2. Install dependencies
+
 ```bash
 bun install
 ```
 
 3. Copy the `.env.example` file to `.env` and fill in the values
+
 ```bash
 cp .env.exemple .env
 ```
 
 4. Start development server
+
 ```bash
 bun dev
 ```
 
 5. Generate static project
+
 ```bash
 bun generate
 ```
 
 6. Start production server
+
 ```bash
 bun start
 ```
@@ -104,6 +85,7 @@ Simply go to the `content/` directory and edit any of the Markdown or JSON files
 ## Setup the Contact Form
 
 This portfolio uses [Resend](https://resend.com/) to handle the contact form. To set it up, follow these steps:
+
 - Get your api key from [Resend](https://resend.com/) here [your api key](https://resend.com/api-keys)
 - Add your api key in the `.env` file
 - change the `from` key in the `sendEmail` route in the `server/api/` folder, you can customize everything you want in this route
@@ -117,6 +99,7 @@ For the blog open graph image, go to the `content/articles` directory and change
 <!-- automd:fetch url="gh:hugorcd/markdown/main/src/contributions.md" -->
 
 ## Contributing
+
 To start contributing, you can follow these steps:
 
 1. First raise an issue to discuss the changes you would like to make.

@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import type { Navigation } from '~/utils/useNavigation'
+import type { Navigation } from "~/utils/useNavigation";
 
 defineProps({
   isText: {
     type: Boolean,
     default: false,
   },
-})
+});
 
-const navigation = getNavigation('home') as Record<string, Navigation>
+const navigation = getNavigation("home") as Record<string, Navigation>;
 </script>
 
 <template>
@@ -20,7 +20,9 @@ const navigation = getNavigation('home') as Record<string, Navigation>
         :animate="false"
         class="border border-white/10"
       >
-        <nav class="z-10 flex h-[50px] justify-around gap-2 p-1 transition-all duration-300 ease-in-out sm:h-[45px] sm:hover:gap-4">
+        <nav
+          class="z-10 flex h-[50px] justify-around gap-2 p-1 transition-all duration-300 ease-in-out sm:h-[45px] sm:hover:gap-4"
+        >
           <NuxtLink
             v-for="item in navigation"
             :id="item.name.toLowerCase()"
@@ -34,10 +36,7 @@ const navigation = getNavigation('home') as Record<string, Navigation>
             :to="item.to"
             class="flex items-center rounded-full border border-transparent px-4 py-1 transition-all duration-300 ease-in-out hover:border-white/5 hover:bg-zinc-900/50 hover:text-main hover:backdrop-blur-3xl sm:px-6"
           >
-            <UIcon
-              :name="item.icon"
-              class="size-7 font-light sm:size-6"
-            />
+            <UIcon :name="item.icon" class="size-7 font-light sm:size-6" />
           </NuxtLink>
         </nav>
       </SpotlightButton>

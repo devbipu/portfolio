@@ -1,20 +1,17 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
-import type { Stack } from '~/data/stack'
+import type { PropType } from "vue";
+import type { Stack } from "~/data/stack";
 
 defineProps({
   item: {
     type: Object as PropType<Stack>,
     required: true,
   },
-})
+});
 </script>
 
 <template>
-  <SpotlightCard
-    white
-    class="p-6"
-  >
+  <SpotlightCard white class="p-6">
     <NuxtLink
       :to="item.link"
       target="_blank"

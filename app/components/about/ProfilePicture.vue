@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { profilePicture } = useAppConfig()
+const { profilePicture } = useAppConfig();
 </script>
 
 <template>

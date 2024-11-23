@@ -16,7 +16,7 @@ defineProps({
     type: Number,
     default: 0,
   },
-})
+});
 </script>
 
 <template>
@@ -31,11 +31,7 @@ defineProps({
         :x="offsetX"
         :y="offsetY"
       >
-        <circle
-          :cx="size / 2"
-          :cy="size / 2"
-          :r="radius"
-        />
+        <circle :cx="size / 2" :cy="size / 2" :r="radius" />
       </pattern>
     </defs>
 

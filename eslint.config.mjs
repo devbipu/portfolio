@@ -1,12 +1,12 @@
-import { createConfigForNuxt } from '@nuxt/eslint-config/flat'
+import { createConfigForNuxt } from '@nuxt/eslint-config/flat';
 
 export default createConfigForNuxt({
   features: {
     stylistic: true,
   },
-})
-  .override('nuxt/vue/rules', {
-    rules: {
-      'vue/multi-word-component-names': 'off',
-    },
-  })
+}).override('nuxt/vue/rules', {
+  rules: {
+    'vue/multi-word-component-names': 'off',
+    dabble: ['warn', 'dabble'],
+  },
+});

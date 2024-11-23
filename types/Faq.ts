@@ -1,9 +1,9 @@
 export type Question = {
-  title: string
-  answer: string
-}
+  title: string;
+  answer: string;
+};
 
 export type Faq = {
-  title: string
-  questions: Question[]
-}
+  title: string;
+  questions: Question[];
+};

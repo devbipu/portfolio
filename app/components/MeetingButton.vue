@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const meetingLink = useRuntimeConfig().public.meetingLink
+const meetingLink = useRuntimeConfig().public.meetingLink;
 </script>
 
 <template>
@@ -10,10 +10,7 @@ const meetingLink = useRuntimeConfig().public.meetingLink
         :to="meetingLink"
       >
         {{ $t("global.meeting") }}
-        <UIcon
-          name="heroicons:calendar-days"
-          class="size-5 text-white/80"
-        />
+        <UIcon name="heroicons:calendar-days" class="size-5 text-white/80" />
       </NuxtLink>
     </SpotlightButton>
   </div>

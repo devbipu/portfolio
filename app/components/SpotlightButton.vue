@@ -2,7 +2,7 @@
 defineProps({
   as: {
     type: String,
-    default: 'button',
+    default: "button",
   },
   rounded: {
     type: Boolean,
@@ -16,7 +16,7 @@ defineProps({
     type: Boolean,
     default: false,
   },
-})
+});
 </script>
 
 <template>
