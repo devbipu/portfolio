@@ -19,9 +19,11 @@ const { t, locale } = useI18n()
 
 useHead({
   titleTemplate: `%s - ${appName}`,
+  meta: [{ name: 'description', content: () => t('global.app_description') }],
 })
 
 useSeoMeta({
+  title: appName,
   description: () => t('global.app_description'),
   author: 'Biplob Shaha',
   ogImage: 'https://bipu.dev/social-preview.jpg',
