@@ -63,8 +63,11 @@ defineOgImage({
         <!-- social -->
         <HomeSocial style="--stagger: 3" data-animate />
 
-        <!-- cta -->
-        <HomeCTA style="--stagger: 4" data-animate />
+        <div class="flex gap-3">
+          <!-- cta -->
+          <HomeCTA style="--stagger: 4" data-animate />
+          <HomeDownloadResume style="--stagger: 4" data-animate />
+        </div>
 
         <div
           style="--stagger: 5"
@@ -77,7 +80,7 @@ defineOgImage({
 
         <Divider class="my-9" />
 
-        <HomeFaq style="--stagger: 6" data-animate />
+        <!-- <HomeFaq style="--stagger: 6" data-animate /> -->
       </div>
     </div>
   </section>

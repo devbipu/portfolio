@@ -1,46 +1,49 @@
 <script setup lang="ts">
-const { profilePicture } = useAppConfig();
+const { profilePicture } = useAppConfig()
 </script>
 
 <template>
-  <div class="flex justify-center">
-    <SpotlightCard
-      mode="after"
-      from="rgba(255,255,255,0.1)"
-      :size="400"
-      class="group hidden w-64 rounded-2xl border border-white/10 bg-white/5 p-2 pb-4 sm:flex"
-    >
-      <div class="relative">
+  <div>
+    <div class="flex justify-center">
+      <SpotlightCard
+        mode="after"
+        from="rgba(255,255,255,0.1)"
+        :size="400"
+        class="group hidden w-64 rounded-2xl border border-white/10 bg-white/5 p-2 pb-4 sm:flex"
+      >
+        <div class="relative">
+          <NuxtImg
+            width="256"
+            :src="profilePicture"
+            class="absolute inset-0 size-64 scale-110 rounded-xl object-cover blur-xl grayscale saturate-200 transition-all duration-300 group-hover:blur-[32px] group-hover:grayscale-0"
+            alt="Biplob Shaha Profile Picture"
+            aria-label="Biplob Shaha Profile Picture"
+          />
+          <NuxtImg
+            width="256"
+            src="/assets/devbipu-photo.png"
+            class="relative size-64 rounded-xl object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+            alt="Biplob Shaha Profile Picture"
+            aria-label="Biplob Shaha Profile Picture"
+          />
+        </div>
+      </SpotlightCard>
+      <SpotlightCard
+        mode="after"
+        from="rgba(255,255,255,0.1)"
+        :size="400"
+        class="group w-64 rounded-2xl border border-white/10 bg-white/5 p-2 pb-4 sm:hidden"
+      >
         <NuxtImg
           width="256"
           :src="profilePicture"
-          class="absolute inset-0 size-64 scale-110 rounded-xl object-cover blur-xl grayscale saturate-200 transition-all duration-300 group-hover:blur-[32px] group-hover:grayscale-0"
+          class="size-64 rounded-xl object-cover transition-all duration-300"
           alt="Biplob Shaha Profile Picture"
           aria-label="Biplob Shaha Profile Picture"
         />
-        <NuxtImg
-          width="256"
-          src="/assets/devbipu-photo.png"
-          class="relative size-64 rounded-xl object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
-          alt="Biplob Shaha Profile Picture"
-          aria-label="Biplob Shaha Profile Picture"
-        />
-      </div>
-    </SpotlightCard>
-    <SpotlightCard
-      mode="after"
-      from="rgba(255,255,255,0.1)"
-      :size="400"
-      class="group w-64 rounded-2xl border border-white/10 bg-white/5 p-2 pb-4 sm:hidden"
-    >
-      <NuxtImg
-        width="256"
-        :src="profilePicture"
-        class="size-64 rounded-xl object-cover transition-all duration-300"
-        alt="Biplob Shaha Profile Picture"
-        aria-label="Biplob Shaha Profile Picture"
-      />
-    </SpotlightCard>
+      </SpotlightCard>
+    </div>
+    <HomeDownloadResume class="mt-3" style="--stagger: 4" data-animate />
   </div>
 </template>
 

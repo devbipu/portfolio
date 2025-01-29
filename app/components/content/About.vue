@@ -17,6 +17,7 @@ const { data: stack } = await useAsyncData('stack', () =>
       class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
     >
       <AboutProfilePicture />
+
       <div class="relative flex flex-col gap-3 sm:ml-4">
         <h3 class="text-lg text-muted">Intro</h3>
         <div class="flex flex-col gap-4 text-main">
