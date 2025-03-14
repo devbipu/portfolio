@@ -9,8 +9,8 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-og-image',
     '@nuxt/fonts',
+    '@zadigetvoltaire/nuxt-gtm',
   ],
-
   imports: {
     presets: [
       {
@@ -67,6 +67,18 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
       available: process.env.NUXT_PUBLIC_AVAILABLE,
       meetingLink: process.env.NUXT_PUBLIC_MEETING_LINK,
+      gtm: {
+        id: 'GTM-5HXP9RKT',
+        trackOnNextTick: false,
+        devtools: true,
+        defer: false,
+        compatibility: false,
+        nonce: '2726c7f26c',
+        enabled: true,
+        debug: true,
+        loadScript: true,
+        enableRouterSync: true,
+      },
     },
     private: {
       resendApiKey: process.env.NUXT_PRIVATE_RESEND_API_KEY,
