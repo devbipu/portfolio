@@ -24,7 +24,7 @@
     "@nuxt/image": "1.8.1",
     "@nuxt/ui": "^2.19.2",
     "@nuxthq/studio": "^2.2.1",
-    "@nuxtjs/i18n": "next",
+    "@nuxtjs/robots": "^5.2.8",
     "@nuxtjs/seo": "^3.0.1",
     "@nuxtjs/sitemap": "^7.2.9",
     "@vueuse/core": "^11.2.0",
@@ -33,13 +33,16 @@
     "automd": "^0.3.12",
     "eslint": "^9.14.0",
     "nuxt": "^3.14.159",
-    "nuxt-og-image": "^3.0.8",
+    "nuxt-og-image": "^5.0.3",
     "nuxt-svgo": "^4.0.8",
     "prettier": "3.3.3",
     "resend": "^4.0.0",
     "vue-sonner": "^1.2.5"
   },
   "dependencies": {
-    "nuxt-site-config": "^3.1.5"
+    "@nuxtjs/i18n": "^9.3.1",
+    "nuxt-site-config": "^3.1.5",
+    "sitemap": "^8.0.0",
+    "unenv": "^1.10.0"
   }
 }

@@ -4,14 +4,15 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/ui',
     'nuxt-svgo',
+    '@nuxtjs/sitemap',
     '@nuxt/content',
     '@nuxthq/studio',
     '@nuxt/image',
     'nuxt-og-image',
     '@nuxt/fonts',
     '@zadigetvoltaire/nuxt-gtm',
-    '@nuxtjs/sitemap',
     '@nuxtjs/seo',
+    '@nuxtjs/robots',
   ],
   imports: {
     autoImport: true,
@@ -39,13 +40,6 @@ export default defineNuxtConfig({
   site: {
     url: 'https://bipu.dev',
     name: 'devbipu portfolio',
-    description: 'Full-Stack Laravel & Vue.js Developer with 3+ years of experience specializing in PHP, Laravel, CodeIgniter, and JavaScript frameworks like Vue.js and Nuxt.js. Passionate about creating efficient, user-friendly applications.',
-    identity: {
-      type: 'Person',
-    },
-    xsl: false,
-    autoLastmod: true,
-    twitter: '@developerbipu',
   },
   colorMode: {
     preference: 'dark',
@@ -101,8 +95,8 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'netlify',
     prerender: {
-      crawlLinks: false,
-      routes: ['/sitemap.xml', '/', '/writing', '/works', '/about', '/contact'],
+      crawlLinks: true,
+      routes: ['/sitemap.xml', '/writing', '/works', '/about', '/contact'],
     },
   },
   i18n: {
@@ -127,20 +121,6 @@ export default defineNuxtConfig({
       projectLg: 3072,
     },
   },
-  sitemap: {
-    hostname: 'https://bipu.dev',
-    gzip: true,
-    routes: async () => {
-      const routes = [
-        '/about',
-        '/works',
-        '/writing',
-        '/contact',
-      ]
-      return routes
-    },
-  },
-
   svgo: {
     autoImportPath: './assets/logo/',
   },
