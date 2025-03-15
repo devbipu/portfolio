@@ -37,7 +37,6 @@
     "nuxt-svgo": "^4.0.8",
     "prettier": "3.3.3",
     "resend": "^4.0.0",
-    "sitemap": "^8.0.0",
     "vue-sonner": "^1.2.5"
   },
   "dependencies": {

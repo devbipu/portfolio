@@ -43,6 +43,8 @@ export default defineNuxtConfig({
     identity: {
       type: 'Person',
     },
+    xsl: false,
+    autoLastmod: true,
     twitter: '@developerbipu',
   },
   colorMode: {
