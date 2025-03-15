@@ -3,6 +3,13 @@ const runtimeConfig = useRuntimeConfig()
 const appConfig = useAppConfig()
 const { locale } = useI18n()
 
+const route = useRoute()
+const baseUrl = 'https://bipu.dev'
+const canonicalUrl = `${baseUrl}${route.path}`
+
+console.log(route);
+
+
 useHead({
   link: [
     {
@@ -20,6 +27,7 @@ useHead({
       rel: 'manifest',
       href: '/site.webmanifest',
     },
+    { rel: 'canonical', href: canonicalUrl }
   ],
 })
 
@@ -27,7 +35,7 @@ useSeoMeta({
   author: 'Biplob Shaha',
   ogType: 'website',
   ogTitle: appConfig.appName,
-  ogSiteName: 'Canvas',
+  ogSiteName: 'devbipu portfolio',
   ogImage: appConfig.openGraphImage,
   ogUrl: () => runtimeConfig.public.siteUrl,
   ogLocale: () => locale.value,

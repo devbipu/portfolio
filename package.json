@@ -25,6 +25,8 @@
     "@nuxt/ui": "^2.19.2",
     "@nuxthq/studio": "^2.2.1",
     "@nuxtjs/i18n": "next",
+    "@nuxtjs/seo": "^3.0.1",
+    "@nuxtjs/sitemap": "^7.2.9",
     "@vueuse/core": "^11.2.0",
     "@vueuse/nuxt": "^11.2.0",
     "@zadigetvoltaire/nuxt-gtm": "^0.0.13",
@@ -37,5 +39,8 @@
     "resend": "^4.0.0",
     "sitemap": "^8.0.0",
     "vue-sonner": "^1.2.5"
+  },
+  "dependencies": {
+    "nuxt-site-config": "^3.1.5"
   }
 }

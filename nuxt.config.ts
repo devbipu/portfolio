@@ -10,8 +10,11 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     '@nuxt/fonts',
     '@zadigetvoltaire/nuxt-gtm',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/seo',
   ],
   imports: {
+    autoImport: true,
     presets: [
       {
         from: 'vue-sonner',
@@ -34,7 +37,9 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/style/main.css'],
   site: {
-    url: process.env.NUXT_SITE_URL || 'https://bipu.dev',
+    url: 'https://bipu.dev',
+    name: 'devbipu portfolio',
+    description: 'Full-Stack Laravel & Vue.js Developer with 3+ years of experience specializing in PHP, Laravel, CodeIgniter, and JavaScript frameworks like Vue.js and Nuxt.js. Passionate about creating efficient, user-friendly applications.',
     identity: {
       type: 'Person',
     },
@@ -120,8 +125,22 @@ export default defineNuxtConfig({
       projectLg: 3072,
     },
   },
+  sitemap: {
+    hostname: 'https://bipu.dev',
+    gzip: true,
+    routes: async () => {
+      const routes = [
+        '/about',
+        '/works',
+        '/writing',
+        '/contact',
+      ]
+      return routes
+    },
+  },
 
   svgo: {
     autoImportPath: './assets/logo/',
   },
+
 })
