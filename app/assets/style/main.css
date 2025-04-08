@@ -1,5 +1,5 @@
-@import "themes/dark.css";
-@import "animation.css";
+@import 'themes/dark.css';
+@import 'animation.css';
 
 @tailwind base;
 @tailwind components;
@@ -86,4 +86,8 @@ body,
   @apply prose-code:text-zinc-900 dark:prose-code:text-zinc-100;
   @apply prose-strong:text-gray-900 dark:prose-strong:text-gray-100 prose-strong:font-[500];
   @apply prose-p:m-0;
+}
+
+.-z-10 {
+  z-index: -10 !important;
 }
