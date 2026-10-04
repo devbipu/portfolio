@@ -1,0 +1,102 @@
+{
+  "title": "What clients say",
+  "subtitle": "Verified reviews from my Upwork clients",
+  "profileUrl": "https://www.upwork.com/freelancers/~018ba98fa81b1fa295",
+  "stats": {
+    "rating": null,
+    "ratingCount": 8,
+    "jobSuccess": null,
+    "jobs": 21,
+    "hours": 1200,
+    "badge": "Top Rated Plus"
+  },
+  "reviews": [
+    {
+      "quote": "Biplob is an excellent full-stack PHP Laravel developer. He quickly understood our project requirements, delivered clean and efficient code, and communicated clearly throughout the contract. His skills in Laravel, Vue.js, and API integration were exactly what we needed. Highly recommended for any full stack PHP, Laravel Vue.js development project!",
+      "rating": 5,
+      "project": "Laravel development on an existing app",
+      "tags": [
+        "laravel",
+        "php",
+        "vue"
+      ],
+      "featured": true
+    },
+    {
+      "quote": "Bipu Delivered high-quality Laravel development work on time with great attention to detail. Very professional, responsive, and easy to work with – highly recommended!",
+      "rating": 5,
+      "project": "Laravel deployment and feature work",
+      "tags": [
+        "laravel",
+        "deployment"
+      ],
+      "featured": true
+    },
+    {
+      "quote": "Biplop setup a new nuxt project for us, and ported over an existing template. We used vendure (graphql) for backend. He set us up on a strong foundation, thanks!",
+      "rating": 5,
+      "project": "Headless ecommerce frontend migration",
+      "tags": [
+        "nuxt",
+        "vue",
+        "ecommerce",
+        "migration"
+      ],
+      "featured": true
+    },
+    {
+      "quote": "Amazing person and fast replies. Whatever i wanted he made it come to life.",
+      "rating": 5,
+      "project": "Custom-coded business website",
+      "tags": [
+        "new-build",
+        "smb",
+        "laravel",
+        "php",
+        "vue.js"
+      ],
+      "featured": true
+    },
+    {
+      "quote": "Biplob has delivered high-quality work on our project. His expertise in Laravel has been invaluable. We're very pleased with his performance and dedication. Great job, Biplob",
+      "rating": 5,
+      "project": "",
+      "tags": [],
+      "featured": false
+    },
+    {
+      "quote": "Biplop setup a new nuxt project for us, and ported over an existing template. We used vendure (graphql) for backend. He set us up on a strong foundation, thanks!",
+      "rating": 5,
+      "project": "",
+      "tags": [
+        "php",
+        "woocommerce",
+        "wordpress",
+        "Nuxt.js",
+        "Vue.js"
+      ],
+      "featured": false
+    },
+    {
+      "quote": "Bipu truly understands our needs and consistently delivers insightful suggestions and logic that exceed our expectations. His ability to anticipate what works best is impressive.",
+      "rating": 5,
+      "project": "",
+      "tags": [
+        "codeigniter",
+        "php"
+      ],
+      "featured": false
+    },
+    {
+      "quote": "Biplob is a skilled programmer and is able to understand requests even from novices easily. The work is excellent, I will definitely work together again and highly recommend it. Thank you!",
+      "rating": 5,
+      "project": "",
+      "tags": [
+        "php",
+        "laravel",
+        "web development"
+      ],
+      "featured": false
+    }
+  ]
+}

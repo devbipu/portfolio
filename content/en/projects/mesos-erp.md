@@ -1,8 +1,8 @@
 ---
-name: Ekopii
-release: 2024
-image: /projects/ekopii.png
-link: https://ekopii.com/
+name: MeSos ERP
+release: 2025
+image: /projects/mesos-erp.png
+link: https://mesos.my
 featured: true
 layout: project
 stacks:
@@ -12,3 +12,5 @@ stacks:
 images:
 
 ---
+
+

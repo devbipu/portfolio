@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bipu.dev/reviews.schema.json",
+  "title": "Client reviews",
+  "description": "Shape of content/en/data/reviews.json, which drives the Upwork proof bar on the homepage and the /reviews page. PRIVACY RULE: this file holds no client identity, no money figures and no contract metadata. A review is a quote, a star rating, and a generic description of the work - nothing that identifies who paid for it or what they paid.",
+  "type": "object",
+  "required": ["title", "subtitle", "reviews"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Editor hint. Present in the local worksheet files only."
+    },
+    "_comment": {
+      "type": "string",
+      "description": "Annotation for the worksheet files. Not read by the site."
+    },
+    "_instructions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Annotation for the worksheet files. Not read by the site."
+    },
+    "title": {
+      "type": "string",
+      "description": "Heading above the reviews section."
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "One line under the heading."
+    },
+    "profileUrl": {
+      "type": "string",
+      "description": "Your own public Upwork profile URL. This is the trust mechanism - it lets a prospect verify every number in one click. Leave empty to hide the link.",
+      "format": "uri"
+    },
+    "stats": {
+      "type": "object",
+      "description": "The proof bar. These are your OWN public profile aggregates, not client data. Every field is optional and is omitted from the UI when null or empty, so partial data is fine.",
+      "additionalProperties": false,
+      "properties": {
+        "rating": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Average star rating out of 5, e.g. 4.92. From the top of your Upwork profile."
+        },
+        "ratingCount": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "How many reviews that average is based on. Upwork shows this as 'X.XX of 5 based on N reviews'. Used for accurate schema.org markup."
+        },
+        "jobSuccess": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Job Success Score as a whole number, e.g. 100."
+        },
+        "jobs": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Total jobs completed."
+        },
+        "hours": {
+          "type": ["integer", "null"],
+          "minimum": 0,
+          "description": "Total hours worked. Rendered with a '+' suffix."
+        },
+        "badge": {
+          "type": "string",
+          "description": "Your exact Upwork badge, e.g. 'Top Rated' or 'Top Rated Plus'. Leave empty if you have none - do not invent one."
+        }
+      }
+    },
+    "reviews": {
+      "type": "array",
+      "description": "6-8 is the sweet spot. More looks padded and nobody reads them.",
+      "items": {
+        "type": "object",
+        "required": ["quote", "rating"],
+        "additionalProperties": false,
+        "properties": {
+          "quote": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The review VERBATIM from Upwork. Do not polish it - informal phrasing and typos read as authentic, smooth marketing prose reads as written by you. If a client named themselves or their company inside the quote, redact that before pasting."
+          },
+          "rating": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 5,
+            "description": "Stars this client gave, e.g. 5 or 4.5. Halves render correctly."
+          },
+          "project": {
+            "type": "string",
+            "description": "The work in plain, GENERIC words, e.g. 'Laravel development on an existing app', 'Fixed broken checkout'. Name the platform the client cares about, not your whole stack - and never the client's project name, brand or domain."
+          },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Lowercase segment tags so reviews can later be reordered per outreach campaign. Suggested vocabulary: wordpress, laravel, react, vue, shopify, webflow, new-build, rescue, redesign, ecommerce, speed, bugfix, migration, smb."
+          },
+          "featured": {
+            "type": "boolean",
+            "description": "true shows it on the homepage. Mark only your 2-4 strongest; the rest appear on /reviews."
+          }
+        }
+      }
+    }
+  }
+}

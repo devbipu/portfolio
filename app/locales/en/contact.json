@@ -4,6 +4,7 @@
   "fullname": "Fullname",
   "email": "Email",
   "phone": "Phone",
+  "whatsapp": "Chat on WhatsApp",
   "subject": "Subject of your message",
   "message": "Message",
   "submit": "Send",

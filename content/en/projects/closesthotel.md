@@ -1,8 +1,8 @@
 ---
-name: Ekopii
-release: 2024
-image: /projects/ekopii.png
-link: https://ekopii.com/
+name: Closest Hotel
+release: 2026
+image: /projects/closesthotel.png
+link: https://closesthotel.com/
 featured: true
 layout: project
 stacks:

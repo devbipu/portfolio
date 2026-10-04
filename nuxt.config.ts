@@ -96,7 +96,14 @@ export default defineNuxtConfig({
     preset: 'netlify',
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml', '/writing', '/works', '/about', '/contact'],
+      routes: [
+        '/sitemap.xml',
+        '/writing',
+        '/works',
+        '/reviews',
+        '/about',
+        '/contact',
+      ],
     },
   },
   i18n: {

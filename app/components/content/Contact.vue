@@ -148,9 +148,17 @@ defineOgImage({
         <div class="flex flex-col gap-3">
           <div class="flex items-center gap-3 text-gray-400">
             <UIcon name="heroicons-phone" class="size-6" aria-hidden="true" />
-            <span>
-              {{ appConfig.phone }}
-            </span>
+            <UTooltip :text="$t('contact.whatsapp')">
+              <NuxtLink
+                :to="appConfig.whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="cursor-pointer transition-colors duration-300 hover:text-main"
+                :aria-label="$t('contact.whatsapp')"
+              >
+                {{ appConfig.phone }}
+              </NuxtLink>
+            </UTooltip>
           </div>
           <div class="flex items-center gap-3 text-gray-400">
             <UIcon

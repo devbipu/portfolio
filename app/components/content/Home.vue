@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const appConfig = useAppConfig()
+const { data: reviews } = await useReviews()
 
 useHead({
   title: () => appConfig.appName,
@@ -69,13 +70,32 @@ defineOgImage({
           <HomeDownloadResume style="--stagger: 4" data-animate />
         </div>
 
-        <div
+        <!-- upwork proof bar: makes the "Top Rated" claim in the H1 checkable -->
+        <ReviewsStats
+          v-if="reviews?.stats"
+          :stats="reviews.stats"
+          :profile-url="reviews.profileUrl"
           style="--stagger: 5"
+          data-animate
+          class="mt-10 max-w-3xl"
+        />
+
+        <div
+          style="--stagger: 6"
           data-animate
           class="mt-12 flex w-full max-w-3xl flex-col gap-4 lg:mt-16"
         >
           <!-- projects -->
           <HomeProjects />
+        </div>
+
+        <!-- social proof -->
+        <div
+          style="--stagger: 7"
+          data-animate
+          class="mt-14 flex w-full max-w-3xl flex-col gap-4 lg:mt-20"
+        >
+          <HomeReviews />
         </div>
 
         <Divider class="my-9" />

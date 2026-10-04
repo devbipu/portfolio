@@ -20,6 +20,11 @@ export function getNavigation(where: Where): Record<string, Navigation> | [] {
           to: '/works',
           icon: 'lucide:briefcase',
         },
+        reviews: {
+          name: 'Reviews',
+          to: '/reviews',
+          icon: 'lucide:star',
+        },
         writing: {
           name: 'Writing',
           to: '/writing',

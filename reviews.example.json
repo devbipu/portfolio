@@ -1,0 +1,31 @@
+{
+  "$schema": "./reviews.schema.json",
+  "_comment": "WORKED EXAMPLE - reference only, these quotes are invented. Review 1 shows a strong entry; review 2 shows a thin one (still worth including, just not featured). Note what is NOT here: no client name, company, country, avatar, no budget, no duration, no date, no project name. Reviews are published unattributed.",
+  "title": "What clients say",
+  "subtitle": "Verified reviews from my Upwork clients",
+  "profileUrl": "https://www.upwork.com/freelancers/~018ba98fa81b1fa295",
+  "stats": {
+    "rating": 4.92,
+    "ratingCount": 23,
+    "jobSuccess": 100,
+    "jobs": 31,
+    "hours": 2400,
+    "badge": "Top Rated"
+  },
+  "reviews": [
+    {
+      "quote": "Our site went down after a plugin update and two other devs told us we'd have to rebuild from scratch. He had it back online in a day and a half, then spent another week cleaning up the mess that caused it. He explained everything in plain English, which I really appreciated as a non-technical owner.",
+      "rating": 5,
+      "project": "WordPress rescue after a failed update",
+      "tags": ["wordpress", "rescue", "smb"],
+      "featured": true
+    },
+    {
+      "quote": "great work, fast delivery. will hire again",
+      "rating": 5,
+      "project": "Laravel bug fixes",
+      "tags": ["laravel", "bugfix"],
+      "featured": false
+    }
+  ]
+}

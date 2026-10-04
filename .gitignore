@@ -22,3 +22,10 @@ logs
 .vercel
 
 rt_base
+
+# Build output / local content cache - can contain private Upwork contract data
+.netlify
+.data
+
+# Local-only review worksheet, never published
+reviews.template.json
