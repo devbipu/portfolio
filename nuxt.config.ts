@@ -100,6 +100,8 @@ export default defineNuxtConfig({
         '/sitemap.xml',
         '/writing',
         '/works',
+        '/services',
+        '/services/lawn-care-business-manager',
         '/reviews',
         '/about',
         '/contact',

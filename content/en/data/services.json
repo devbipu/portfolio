@@ -1,0 +1,23 @@
+{
+  "title": "What I build",
+  "subtitle": "Business software built around your workflow, with no mandatory monthly subscription",
+  "services": [
+    {
+      "title": "Lawn Care Business Manager",
+      "slug": "lawn-care-business-manager",
+      "description": "A web application built around how a lawn care or landscaping company actually runs: properties, recurring services, crew scheduling, job completion and invoicing in one place. One-time development, self-hosted, no mandatory monthly subscription.",
+      "icon": "lucide:sprout",
+      "deliverables": [
+        "Customer and property records with full service history",
+        "Online estimate requests, quotes and follow-up tracking",
+        "Recurring service schedules and crew day sheets",
+        "Mobile-friendly interface for crews in the field",
+        "Invoicing, payment status and customer notifications"
+      ],
+      "stack": ["Laravel", "Vue.js", "Nuxt.js", "MySQL", "Tailwind CSS"],
+      "startingAt": "",
+      "timeline": "4-10 weeks",
+      "featured": true
+    }
+  ]
+}

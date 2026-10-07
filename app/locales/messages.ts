@@ -8,6 +8,8 @@ import en_writing from './en/writing.json'
 
 import en_reviews from './en/reviews.json'
 
+import en_services from './en/services.json'
+
 const messages = {
   en: {
     navigation: en_navigation,
@@ -15,6 +17,7 @@ const messages = {
     global: en_global,
     writing: en_writing,
     reviews: en_reviews,
+    services: en_services,
   },
 }
 

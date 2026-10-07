@@ -20,8 +20,11 @@ const navigation = getNavigation("home") as Record<string, Navigation>;
         :animate="false"
         class="border border-white/10"
       >
+        <!-- Mobile spacing is tight on purpose: seven items at the old
+             gap/padding overflowed a 390px viewport and clipped the first and
+             last icons. Each item still clears a 44px tap target. -->
         <nav
-          class="z-10 flex h-[50px] justify-around gap-2 p-1 transition-all duration-300 ease-in-out sm:h-[45px] sm:hover:gap-4"
+          class="z-10 flex h-[50px] justify-around gap-1 p-1 transition-all duration-300 ease-in-out sm:h-[45px] sm:gap-2 sm:hover:gap-4"
         >
           <NuxtLink
             v-for="item in navigation"
@@ -34,9 +37,9 @@ const navigation = getNavigation("home") as Record<string, Navigation>;
                 : 'text-muted',
             ]"
             :to="item.to"
-            class="flex items-center rounded-full border border-transparent px-3 py-1 transition-all duration-300 ease-in-out hover:border-white/5 hover:bg-zinc-900/50 hover:text-main hover:backdrop-blur-3xl sm:px-5"
+            class="flex items-center rounded-full border border-transparent px-2.5 py-1 transition-all duration-300 ease-in-out hover:border-white/5 hover:bg-zinc-900/50 hover:text-main hover:backdrop-blur-3xl sm:px-5"
           >
-            <UIcon :name="item.icon" class="size-7 font-light sm:size-6" />
+            <UIcon :name="item.icon" class="size-6 font-light" />
           </NuxtLink>
         </nav>
       </SpotlightButton>
