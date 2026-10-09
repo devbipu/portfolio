@@ -9,9 +9,11 @@ const props = defineProps({
   },
 })
 
-// No attribution block by design: reviews are published unattributed, so there
-// is no client name, company, country, avatar or date to render. The Upwork
-// mark plus the verifiable profile link carries the trust instead.
+// Attribution stops at the shortened name Upwork already shows publicly - no
+// company, country, avatar or date. The Upwork mark plus the verifiable
+// profile link is still what carries the trust; the name only makes it
+// easier to match a quote to the review it came from.
+const client = computed(() => props.review.client?.trim() ?? '')
 const project = computed(() => props.review.project?.trim() ?? '')
 </script>
 
@@ -38,13 +40,22 @@ const project = computed(() => props.review.project?.trim() ?? '')
         &ldquo;{{ review.quote }}&rdquo;
       </blockquote>
 
-      <!-- generic description of the work, never the client's project name -->
+      <!-- who said it, then a generic description of the work - never the
+           client's company or the project's real name -->
       <figcaption
-        v-if="project"
-        class="border-t border-white/10 pt-4"
+        v-if="client || project"
+        class="flex flex-col items-start gap-2 border-t border-white/10 pt-4"
       >
         <span
-          class="inline-block rounded-full border border-white/10 px-2.5 py-0.5 text-xs text-muted"
+          v-if="client"
+          class="text-sm font-medium text-main"
+        >
+          {{ client }}
+        </span>
+
+        <span
+          v-if="project"
+          class="rounded-full border border-white/10 px-2.5 py-0.5 text-xs text-muted"
         >
           {{ project }}
         </span>

@@ -7,5 +7,10 @@
   "view_profile": "View my Upwork profile",
   "see_all": "Read all {count} reviews",
   "empty": "Reviews are on their way - check back shortly.",
-  "cta_hint": "Want results like these? Tell me what you're building."
+  "cta_hint": "Want results like these? Tell me what you're building.",
+  "letter_title": "A letter from a client",
+  "letter_read_full": "Read the full letter",
+  "letter_view_pdf": "View the signed letter",
+  "letter_view_project": "See the project",
+  "letter_aria": "Recommendation letter from {author}, {role} at {company}"
 }

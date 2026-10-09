@@ -8,11 +8,14 @@ const featured = computed(
 )
 
 const total = computed(() => reviews.value?.reviews?.length ?? 0)
+
+// A named, signed letter outranks any anonymous quote, so it leads.
+const letter = computed(() => reviews.value?.letter ?? null)
 </script>
 
 <template>
   <div
-    v-if="featured.length"
+    v-if="featured.length || letter"
     class="flex w-full flex-col items-center justify-center gap-8"
   >
     <div class="flex flex-col items-center justify-center gap-2">
@@ -24,7 +27,17 @@ const total = computed(() => reviews.value?.reviews?.length ?? 0)
       </p>
     </div>
 
-    <div class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
+    <ReviewsLetter
+      v-if="letter"
+      :letter="letter"
+      compact
+      class="w-full"
+    />
+
+    <div
+      v-if="featured.length"
+      class="grid w-full grid-cols-1 gap-4 sm:grid-cols-2"
+    >
       <ReviewsCard
         v-for="(review, index) in featured"
         :key="index"

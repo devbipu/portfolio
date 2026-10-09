@@ -1,6 +1,6 @@
 {
   "title": "What clients say",
-  "subtitle": "Verified reviews from my Upwork clients",
+  "subtitle": "A signed recommendation, and verified reviews from my Upwork clients",
   "profileUrl": "https://www.upwork.com/freelancers/~018ba98fa81b1fa295",
   "stats": {
     "rating": null,
@@ -9,6 +9,22 @@
     "jobs": 21,
     "hours": 1200,
     "badge": "Top Rated Plus"
+  },
+  "letter": {
+    "excerpt": "He has been an invaluable asset, very smart, humble, and responsive. I could not have asked for anything more from a developer.",
+    "salutation": "To whom it may concern,",
+    "body": [
+      "Bipu has been working with our team for close to a year now. He has been an invaluable asset, very smart, humble, and responsive. I could not have asked for anything more from a developer.",
+      "The project is currently paused for an undetermined amount of time, so right now we don't have work for him, but I hope he will be available if/when the project resumes! What I do know is that he always made himself available any time of the day or night to help us with any production problems and was able to calmly and quickly work through any issues. I cannot say enough good things about him, and I know that any team he joins will enjoy the same benefits that we did."
+    ],
+    "author": "Paul Papasavas",
+    "role": "CEO and President",
+    "company": "Closest Group, Inc.",
+    "date": "2026-10-08",
+    "signature": "/assets/paul-papasavas-signature.png",
+    "pdf": "/assets/recommendation-letter-closest-group.pdf",
+    "projectUrl": "https://closesthotel.com/",
+    "rating": 5
   },
   "reviews": [
     {
@@ -25,6 +41,7 @@
     {
       "quote": "Bipu Delivered high-quality Laravel development work on time with great attention to detail. Very professional, responsive, and easy to work with – highly recommended!",
       "rating": 5,
+      "client": "Bulat S.",
       "project": "Laravel deployment and feature work",
       "tags": [
         "laravel",
@@ -35,6 +52,7 @@
     {
       "quote": "Biplop setup a new nuxt project for us, and ported over an existing template. We used vendure (graphql) for backend. He set us up on a strong foundation, thanks!",
       "rating": 5,
+      "client": "Alex P.",
       "project": "Headless ecommerce frontend migration",
       "tags": [
         "nuxt",

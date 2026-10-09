@@ -4,6 +4,7 @@ const appConfig = useAppConfig()
 
 const all = computed(() => reviews.value?.reviews ?? [])
 const stats = computed(() => reviews.value?.stats ?? {})
+const letter = computed(() => reviews.value?.letter ?? null)
 
 defineOgImage({
   url: appConfig.openGraphImage,
@@ -18,9 +19,42 @@ defineOgImage({
 // reviews hosted on your own site - this is here for semantic clarity and
 // AI/LLM search, not for SERP stars.
 const jsonLd = computed(() => {
-  if (!all.value.length) return null
+  if (!all.value.length && !letter.value) return null
 
   const rating = stats.value.rating
+
+  // The letter is the only review here with a real author, so it is the only
+  // one worth emitting as attributed structured data. Role, company and the
+  // link to the signed PDF all go in; the signer's email deliberately does not.
+  const letterReview = letter.value
+    ? [
+        {
+          '@type': 'Review',
+          'name': letter.value.excerpt,
+          'reviewBody': letter.value.body.join('\n\n'),
+          'datePublished': letter.value.date,
+          ...(letter.value.pdf ? { url: `https://bipu.dev${letter.value.pdf}` } : {}),
+          ...(letter.value.rating
+            ? {
+                reviewRating: {
+                  '@type': 'Rating',
+                  'ratingValue': letter.value.rating,
+                  'bestRating': 5,
+                },
+              }
+            : {}),
+          'author': {
+            '@type': 'Person',
+            'name': letter.value.author,
+            'jobTitle': letter.value.role,
+            'worksFor': {
+              '@type': 'Organization',
+              'name': letter.value.company,
+            },
+          },
+        },
+      ]
+    : []
 
   return {
     '@context': 'https://schema.org',
@@ -40,21 +74,25 @@ const jsonLd = computed(() => {
           },
         }
       : {}),
-    // Published unattributed: the author is a genuinely anonymous Upwork
-    // client, and no name, date or project identifier is emitted here.
-    'review': all.value.map(review => ({
-      '@type': 'Review',
-      'reviewBody': review.quote,
-      'reviewRating': {
-        '@type': 'Rating',
-        'ratingValue': review.rating,
-        'bestRating': 5,
-      },
-      'author': {
-        '@type': 'Person',
-        'name': 'Upwork client',
-      },
-    })),
+    // Below the letter, the author is only ever the shortened name Upwork
+    // publishes, and falls back to a generic label when a review has none.
+    // No date, company or project identifier is emitted here either way.
+    'review': [
+      ...letterReview,
+      ...all.value.map(review => ({
+        '@type': 'Review',
+        'reviewBody': review.quote,
+        'reviewRating': {
+          '@type': 'Rating',
+          'ratingValue': review.rating,
+          'bestRating': 5,
+        },
+        'author': {
+          '@type': 'Person',
+          'name': review.client?.trim() || 'Upwork client',
+        },
+      })),
+    ],
   }
 })
 
@@ -88,6 +126,13 @@ useHead({
       class="mb-10"
     />
 
+    <!-- attributed and signed, so it leads the page -->
+    <ReviewsLetter
+      v-if="letter"
+      :letter="letter"
+      class="mb-10"
+    />
+
     <div
       v-if="all.length"
       class="grid grid-cols-1 items-stretch gap-4 sm:grid-cols-2"
@@ -100,7 +145,7 @@ useHead({
     </div>
 
     <p
-      v-else
+      v-else-if="!letter"
       class="text-center text-sm text-muted"
     >
       {{ $t('reviews.empty') }}

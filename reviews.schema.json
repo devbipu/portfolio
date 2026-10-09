@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://bipu.dev/reviews.schema.json",
   "title": "Client reviews",
-  "description": "Shape of content/en/data/reviews.json, which drives the Upwork proof bar on the homepage and the /reviews page. PRIVACY RULE: this file holds no client identity, no money figures and no contract metadata. A review is a quote, a star rating, and a generic description of the work - nothing that identifies who paid for it or what they paid.",
+  "description": "Shape of content/en/data/reviews.json, which drives the Upwork proof bar on the homepage and the /reviews page. PRIVACY RULE: the `reviews` array holds no money figures and no contract metadata - nothing that identifies what a client paid. The only identifying field is `client`, which repeats the shortened name your public Upwork profile already shows ('Bulat S.') and nothing more. `letter` is the one fully attributed item, and only with the signer's explicit written permission.",
   "type": "object",
   "required": ["title", "subtitle", "reviews"],
   "additionalProperties": false,
@@ -71,6 +71,68 @@
         }
       }
     },
+    "letter": {
+      "type": "object",
+      "description": "An attributed recommendation letter - the one place on the site a client is named. CONSENT RULE: do not fill this in without explicit written permission from the signer to publish their name, role and company. A letter addressed 'To whom it may concern' is permission to show it to prospects, not to put it on an indexed public page. Never add an email address or phone number here; the signed PDF carries the contact details and a scrapeable HTML page must not. Omit the whole object to hide the feature.",
+      "required": ["excerpt", "body", "author", "role", "company", "date"],
+      "additionalProperties": false,
+      "properties": {
+        "excerpt": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The strongest one or two sentences, lifted VERBATIM from `body`. This is what the homepage shows - keep it short enough to read in a glance."
+        },
+        "salutation": {
+          "type": "string",
+          "description": "The letter's opening line, e.g. 'To whom it may concern,'. Rendered above the body on /reviews. Omit to skip it."
+        },
+        "body": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1,
+          "description": "The full letter VERBATIM, one string per paragraph. Transcribe it exactly, including any sentence that reads awkwardly out of context - editing a letter to flatter yourself is the one thing that would make it worthless. Leave out the letterhead, the salutation (use `salutation`), the sign-off and the contact details; those are rendered from the fields below."
+        },
+        "author": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The signer's full name, exactly as they sign it."
+        },
+        "role": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Their job title, e.g. 'CEO and President'. Without a title the name proves nothing."
+        },
+        "company": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Their company, e.g. 'Closest Group, Inc.'."
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date the letter was written, as ISO YYYY-MM-DD. Rendered in long form and used for the `datePublished` in schema.org markup."
+        },
+        "signature": {
+          "type": "string",
+          "description": "Path to a transparent PNG/SVG of the handwritten signature, light-on-dark to suit the theme. Decorative only - it is rendered with an empty alt. Omit to hide it."
+        },
+        "pdf": {
+          "type": "string",
+          "description": "Path to the original signed letter under /public. This is the trust mechanism: it lets a prospect check the transcription against the real document. Omit to hide the link."
+        },
+        "projectUrl": {
+          "type": "string",
+          "description": "The work this letter is about, so the praise points at something shippable. Omit to hide the link.",
+          "format": "uri"
+        },
+        "rating": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Stars to show alongside the letter, if this client also left a rating. Omit to render no stars."
+        }
+      }
+    },
     "reviews": {
       "type": "array",
       "description": "6-8 is the sweet spot. More looks padded and nobody reads them.",
@@ -89,6 +151,10 @@
             "minimum": 0,
             "maximum": 5,
             "description": "Stars this client gave, e.g. 5 or 4.5. Halves render correctly."
+          },
+          "client": {
+            "type": "string",
+            "description": "Who left the review, copied EXACTLY as your own public Upwork profile shows it against that review - normally a first name plus last initial, e.g. 'Bulat S.'. The rule is that a prospect can already see this; so copy it from the public profile, never from the contract record, which holds the full legal name. Never add an email, country, job title or anything else the profile does not show. Omit to leave a review unattributed; mixing attributed and unattributed reviews is fine."
           },
           "project": {
             "type": "string",
