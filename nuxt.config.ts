@@ -75,8 +75,10 @@ export default defineNuxtConfig({
         defer: false,
         compatibility: false,
         nonce: '2726c7f26c',
-        enabled: true,
-        debug: true,
+        // Enabled from app/plugins/analytics.client.ts once the visit looks
+        // human, so bots never load the container or reach GA4.
+        enabled: false,
+        debug: false,
         loadScript: true,
         enableRouterSync: true,
       },
@@ -102,6 +104,9 @@ export default defineNuxtConfig({
         '/works',
         '/services',
         '/services/lawn-care-business-manager',
+        '/services/laravel-web-app-development',
+        '/services/vue-nuxt-web-app-development',
+        '/services/wordpress-website-development',
         '/reviews',
         '/about',
         '/contact',

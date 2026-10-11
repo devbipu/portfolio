@@ -18,6 +18,55 @@
       "startingAt": "",
       "timeline": "4-10 weeks",
       "featured": true
+    },
+    {
+      "title": "Laravel Web Apps & SaaS",
+      "slug": "laravel-web-app-development",
+      "description": "Custom web applications and multi-tenant SaaS products on Laravel: the data model, the API, subscription billing, roles and permissions, and the background jobs that keep it all moving. Built to be handed over and run on infrastructure you control.",
+      "icon": "lucide:server",
+      "deliverables": [
+        "Multi-tenant architecture with roles and permissions",
+        "Subscription billing, plans and usage limits",
+        "REST or GraphQL API for web and mobile clients",
+        "Admin dashboard with the reports you actually read",
+        "Queues, scheduled jobs and third-party integrations",
+        "Automated tests and a repeatable deployment pipeline"
+      ],
+      "stack": ["Laravel", "PHP", "MySQL", "Redis", "Inertia.js", "Tailwind CSS"],
+      "startingAt": "",
+      "timeline": "6-16 weeks"
+    },
+    {
+      "title": "Vue.js & Nuxt.js Web Apps",
+      "slug": "vue-nuxt-web-app-development",
+      "description": "Front ends that stay fast as they grow: server-rendered Nuxt sites that search engines can actually read, dashboards that keep up with real data volumes, and a component system your team can extend without guessing.",
+      "icon": "lucide:monitor-smartphone",
+      "deliverables": [
+        "Server-rendered or static Nuxt build for SEO and speed",
+        "Reusable component library and design tokens",
+        "Auth flows, state management and API integration",
+        "Accessible, responsive layouts down to mobile",
+        "Core Web Vitals measured and tuned before handover"
+      ],
+      "stack": ["Vue 3", "Nuxt.js", "TypeScript", "Pinia", "Tailwind CSS", "Vite"],
+      "startingAt": "",
+      "timeline": "3-10 weeks"
+    },
+    {
+      "title": "WordPress Website Development",
+      "slug": "wordpress-website-development",
+      "description": "Business websites and WooCommerce stores on WordPress, built as a custom theme rather than a stack of page-builder plugins. Your team gets an editor they can use; the site keeps its speed, its security updates and its search rankings.",
+      "icon": "lucide:globe",
+      "deliverables": [
+        "Custom theme built to your brand, no page-builder bloat",
+        "Editable pages and reusable blocks your team controls",
+        "WooCommerce storefront, checkout and payment setup",
+        "On-page SEO, structured data and analytics wired up",
+        "Speed, backups, security hardening and update routine"
+      ],
+      "stack": ["WordPress", "PHP", "WooCommerce", "ACF", "MySQL", "Tailwind CSS"],
+      "startingAt": "",
+      "timeline": "2-6 weeks"
     }
   ]
 }
